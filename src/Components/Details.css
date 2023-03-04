@@ -1,0 +1,46 @@
+.leftside {
+    margin-top: 10px;
+    margin-left: 100px;
+    height: 80vh;
+    width: 32vw;
+    float: left;
+}
+.detailimg {
+    height: 40vh;
+    width: 16vw;
+}
+.rightside{
+    float: right;
+    padding: 40px;
+    margin: 15px;
+    height: 90vh;
+    width: 40vw;
+}
+.rate {
+    text-decoration: line-through 2px;
+}
+.orange {
+    color: orangered;
+}
+.circle{
+    height: 40px;
+}
+.cir{
+    margin: 10px;
+    height: 40px;
+    width: 40px;
+    border: 2px solid black;
+    border-radius: 100%;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    cursor: pointer;
+}
+.s{
+    display: flex;
+}
+.b{
+    cursor: pointer;
+    margin: 70px;
+}
