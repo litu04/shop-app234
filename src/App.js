@@ -11,13 +11,11 @@ function App() {
   return (
     <>
     <Router>
-      <div>
         <Routes>
           <Route path="/" element={[<Header/>,<Section/>,<Products/>]}></Route>
-          <Route path="/Details/:id" element={[<Header/>,<Details/>]}></Route>
+          <Route path="/details/:id" element={[<Header/>,<Details/>]}></Route>
           <Route path="/Cart" element={[<Header/>,<Cart/>]}></Route>
         </Routes>
-      </div>
     </Router>
     </>
   );

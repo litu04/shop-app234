@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import './Header.css'
 import { Link } from 'react-router-dom';
-import { data } from '../productData'
+import { CartState } from '../Context';
 
 export default function Header() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchData, setSearchData] = useState([]);
-
+  const { products, searchData, setSearchData, searchQuery, setSearchQuery } = CartState()
   useEffect(() => {
     if (searchQuery.length > 0) {
-      setSearchData(data.filter((d) => {
-        return Object.values(d).join("").toLowerCase().includes(searchQuery.toLowerCase())
+      setSearchData(products.filter((data) => {
+        return Object.values(data).join("").toLowerCase().includes(searchQuery.toLowerCase())
       }))
     }
     console.log("HI--- ", searchData);

@@ -1,17 +1,18 @@
 import React from "react";
 import './Details.css';
-import {data} from '../productData'
-
 import { useParams } from "react-router-dom";
+import { CartState } from "../Context";
 
 export default function Details() {
+    const { products } = CartState()
     const { id } = useParams();
+    const product = products.filter((prod) => prod.id === id)
     
     return(
         <>
         <section className="leftside">
         <div className="ldiv">
-        <div>User details page {data[id]}</div>
+        <div>User details page {product[id]}</div>
         {/* <div>User details page {id.data.name}</div> */}
         {/* <img src={params.a.otherImages[0]} alt="" className="detailimg"/>
         <img src={params.a.otherImages[1]} className="detailimg"/>
@@ -21,12 +22,12 @@ export default function Details() {
         </section>
         <section className="rightside">
             <div className="rdiv">
-            <div className="bold">Dennis Lingo</div>
+            <div className="bold">{product.name}</div>
             <br />
-            <div>Men Slim Fit Casual Shirt</div>
-            <div>Rs. 554</div>
-            <div className="rate">Rs. 1849</div>
-            <div className="orange">70%</div>
+            <div>{product.description}</div>
+            <div>{product.finalPrice}</div>
+            <div className="rate">{product.strickPrice}</div>
+            <div className="orange">{product.discount}</div>
             <div>Size Chart</div>
             <div className="s">
                 <div className="circle">
