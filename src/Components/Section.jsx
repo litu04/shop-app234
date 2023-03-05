@@ -17,6 +17,7 @@ export default function Section() {
     const handleRadioBtn = (e) => {
         setSelectedGender(e.target.value)   
     }
+    console.log("selectedcategories--> ", selectedcategories)
     const handleCheckedItems = (e) => {
         const { value, checked } = e.target
         if (checked) {
